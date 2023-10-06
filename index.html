@@ -1,44 +1,55 @@
-<!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template Base</title>
-    <link rel="stylesheet" href="css/style.css">
+	<meta charset="utf-8">
+	<title>OPERA RPG: Catandólares</title>
+	<meta name="description" content="Catandólares: Uma Aventura-Solo para o OPERA RPG. Interprete o personagem e estudante Tomás de Oliveira, numa aventura onde ele ele investiga a moeda Catandólar. ISBN: 85-89161-05-6. Palavras-chave: aventuras interativas, aventura-solo, ficha de personagem, imersão, opera rpg, rpg, simulação de realidades."/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa|Amatic+SC">
+	<link rel = "stylesheet" href = "style.css">
+	<script src = "main.js"></script>
+	<script src="sweetalert_min.js"></script>
+	<script type="text/javascript">
+		function toggleFAB()
+		{
+			var modal=document.getElementById('janelaModal');
+			var modalImg=document.getElementById("imgModal");
+			var captionTexto=document.getElementById("txtImg");
+			var btFechar=document.getElementsByClassName("fechar")[0];
+
+			modal.style.display="block";
+			modalImg.src="img/ficha_Tomas.svg";
+			modalImg.alt="Ficha de Tomás Oliveira";
+			captionTexto.innerHTML="Ficha do Estudante <a href='img/ficha_Tomas.png' class='classe1' target='blank'>Tomás de Oliveira para o OPERA RPG</a>";
+
+			btFechar.onclick=function()
+			{
+				modal.style.display="none";
+			}
+		}
+	</script>
 </head>
-
 <body>
-    <!--Cabeçalho-->
-    <div id="cabecalho">
-        <!--Conteúdo do Cabeçalho-->
-        <!--Aqui temos uma imagem central-->
-    </div>
-
-    <!--Conteúdo Principal-->
-    <div id="content">
-        <!--Texto Interativo-->
-        <h1>Apresentação</h1>
-        <p>Aqui entra o texto de boas vindas</p>
-        <button>Início da Aventura</button>
-        <button>Conheça o OPERA RPG</button>
-        <button>Instruções de Jogo</button>
-        <button>Crédito</button>
-    </div>
-
-    <!--Inserindo a JANELA MODAL-->
-    </div>
-    <div class="fab">
-        <button class="main" onclick="toggleFAB();">
-        </button>
-    </div>
-    <div id="janelaModal" class="modalVisual">
-        <span class="fechar" }>X</span>
-        <img class="modalConteudo" id="imgModal">
-        <div id="txtImg"></div>
-    </div>
-
-    <script src="js/script.js"></script>
-</body>
-
+	<div id = "cabecalho">
+	<center><img src = "img/cabecalho__Catandolares.gif"></center>
+	</div>
+	<div id="content">
+		<h2>Bem vindo a esta aventura-solo, no sistema OPERA RPG</h2>
+		<h3>Você jogará com Tomás, descrito na ficha abaixo, e o mestre-de-jogo será o livro, na forma de texto.</h3><h3>Em um jogo de representação com o mestre-de-jogo presente, ele geralmente não dá dicas sobre quais opções um personagem pode seguir, o mestre-de-jogo apenas vai contando a história e cabe ao jogador imaginar a situação, calcular as opções e falar a sua decisão ao mestre-de-jogo.</h3><h3>Adaptando essa conversa para a escrita, enquanto a história foi escrita, foram previstas algumas alternativas que um jogador imaginaria e você pode escolher qual caminho que Tomás seguirá escolhendo o texto a ser lido.</h3><h3>Você, seguindo sua rotina de estudante, está lendo um texto...</h3>
+			<center><input type="button" id="button0" class="button button0" data-destination="dia_1" name="choices" value="Comece a aventura!"></center>
+			<center><input type="button" id="button1" class="button button1" data-destination="" name="choices" value="Quer conhecer o OPERA RPG?"></center>
+			<center><input type="button" id="button2" class="button button2" data-destination="instrucoes" name="choices" value="Quer saber como jogar?"></center>
+			<center><input type="button" id="button3" class="button button3" data-destination="creditos" name="choices" value="Créditos"></center>
+	</div>
+	<div class="fab">
+		<button class="main" onclick="toggleFAB();">
+		</button>
+	</div>
+	<div id="janelaModal" class="modalVisual">
+		<span class="fechar"}>X</span>
+		<img class="modalConteudo" id="imgModal">
+		<div id="txtImg"></div>
+	</div>
+	<center>
+		
+	</center>
+</body> 
 </html>
