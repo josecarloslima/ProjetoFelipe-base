@@ -1,55 +1,66 @@
 <html lang="pt-br">
+
 <head>
 	<meta charset="utf-8">
-	<title>OPERA RPG: Catandólares</title>
-	<meta name="description" content="Catandólares: Uma Aventura-Solo para o OPERA RPG. Interprete o personagem e estudante Tomás de Oliveira, numa aventura onde ele ele investiga a moeda Catandólar. ISBN: 85-89161-05-6. Palavras-chave: aventuras interativas, aventura-solo, ficha de personagem, imersão, opera rpg, rpg, simulação de realidades."/>
+	<title>OPERA RPG: A fênix no gelo</title>
+	<meta name="description" content="A fênix no gelo é uma aventura solo no universo de Lucídia para o Ópera RPG." />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa|Amatic+SC">
-	<link rel = "stylesheet" href = "style.css">
-	<script src = "main.js"></script>
-	<script src="sweetalert_min.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/main.js"></script>
+	<script src="js/sweetalert_min.js"></script>
 	<script type="text/javascript">
-		function toggleFAB()
-		{
-			var modal=document.getElementById('janelaModal');
-			var modalImg=document.getElementById("imgModal");
-			var captionTexto=document.getElementById("txtImg");
-			var btFechar=document.getElementsByClassName("fechar")[0];
+		function toggleFAB() {
+			var modal = document.getElementById('janelaModal');
+			var modalImg = document.getElementById("imgModal");
+			var captionTexto = document.getElementById("txtImg");
+			var btFechar = document.getElementsByClassName("fechar")[0];
 
-			modal.style.display="block";
-			modalImg.src="img/ficha_Tomas.svg";
-			modalImg.alt="Ficha de Tomás Oliveira";
-			captionTexto.innerHTML="Ficha do Estudante <a href='img/ficha_Tomas.png' class='classe1' target='blank'>Tomás de Oliveira para o OPERA RPG</a>";
+			modal.style.display = "block";
+			modalImg.src = "img/ficha-capita.jpg";
+			modalImg.alt = "Capitã Nanquim";
+			captionTexto.innerHTML = "Ficha Capitã <a href='img/ficha-capita.jpg' class='classe1' target='blank'>Capitã Nanquim para o OPERA RPG</a>";
 
-			btFechar.onclick=function()
-			{
-				modal.style.display="none";
+			btFechar.onclick = function () {
+				modal.style.display = "none";
 			}
 		}
 	</script>
 </head>
+
 <body>
-	<div id = "cabecalho">
-	<center><img src = "img/cabecalho__Catandolares.gif"></center>
+	<div id="cabecalho">
+		<center><img src="img/cabecalho__Catandolares.gif"></center>
 	</div>
 	<div id="content">
-		<h2>Bem vindo a esta aventura-solo, no sistema OPERA RPG</h2>
-		<h3>Você jogará com Tomás, descrito na ficha abaixo, e o mestre-de-jogo será o livro, na forma de texto.</h3><h3>Em um jogo de representação com o mestre-de-jogo presente, ele geralmente não dá dicas sobre quais opções um personagem pode seguir, o mestre-de-jogo apenas vai contando a história e cabe ao jogador imaginar a situação, calcular as opções e falar a sua decisão ao mestre-de-jogo.</h3><h3>Adaptando essa conversa para a escrita, enquanto a história foi escrita, foram previstas algumas alternativas que um jogador imaginaria e você pode escolher qual caminho que Tomás seguirá escolhendo o texto a ser lido.</h3><h3>Você, seguindo sua rotina de estudante, está lendo um texto...</h3>
-			<center><input type="button" id="button0" class="button button0" data-destination="dia_1" name="choices" value="Comece a aventura!"></center>
-			<center><input type="button" id="button1" class="button button1" data-destination="" name="choices" value="Quer conhecer o OPERA RPG?"></center>
-			<center><input type="button" id="button2" class="button button2" data-destination="instrucoes" name="choices" value="Quer saber como jogar?"></center>
-			<center><input type="button" id="button3" class="button button3" data-destination="creditos" name="choices" value="Créditos"></center>
+		<h2>Bem vinda, Capitã!</h2>
+		<h3>Você jogará com a Capitã Nanquim, descrita na ficha abaixo, enquanto o mestre-de-jogo será o próprio texto,
+			levando você por uma aventura nas terras de Lucídia.</h3>
+		<h3>É o texto que vai lhe apresentar as situações, e as opções de ação, cabe a você decidir pra onde ir, quais
+			rumos tomar.</h3>
+		<h3>Lucídia é um mundo completo do sistema OPERA RPG, e aqui você conhecerá uma das várias histórias dete mundo.
+		</h3>
+		<h3>E nossa aventura começa assim...</h3>
+		<center><input type="button" id="button0" class="button button0" data-destination="dia_1" name="choices"
+				value="Comece a aventura!"></center>
+		<center><input type="button" id="button1" class="button button1" data-destination="" name="choices"
+				value="Quer conhecer o OPERA RPG?"></center>
+		<center><input type="button" id="button2" class="button button2" data-destination="instrucoes" name="choices"
+				value="Quer saber como jogar?"></center>
+		<center><input type="button" id="button3" class="button button3" data-destination="creditos" name="choices"
+				value="Créditos"></center>
 	</div>
 	<div class="fab">
 		<button class="main" onclick="toggleFAB();">
 		</button>
 	</div>
 	<div id="janelaModal" class="modalVisual">
-		<span class="fechar"}>X</span>
+		<span class="fechar" }>X</span>
 		<img class="modalConteudo" id="imgModal">
 		<div id="txtImg"></div>
 	</div>
 	<center>
-		
+
 	</center>
-</body> 
+</body>
+
 </html>
