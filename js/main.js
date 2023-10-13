@@ -252,7 +252,7 @@ function getStory() {
 		recuperaMapa: {
 			title: "Recuperar o mapa que está na cabine do capitão",
 			image: "img/suv02.webp",
-			story: "<h3>Você está aqui por um único motivo, encontrar o templo que pode trazer alguma esperança para o mundo.</h3><h3>Suas habilidades especiais de cartografo fazem que você conheça e entenda qualquer terreno como ninguém e se mova com agilidade e precisão.</h3><h3>Enquanto o caos se instala no convés você corre e desvia do mastro caindo, dos tentáculos do monstro e salta sobre as rachaduras para alcançar a cabine.</h3><h3>Dentro da cabine você sente um calafrio, o mapa desapareceu, alguém foi mais rápido que você!</h3><h3>Sem tempo para pensar você apensa se lamenta de ter tido que depender do serviço de piratas, e já que está aqui decide retribuir o favor e guardar para você os equipamentos que estão aqui.<h3></h3>São ferramentas de ladrões, coisas para abrir fechaduras, revelar e desativar armadilhas, talvez sejam uteis no futuro.</h3>",
+			story: "<h3>Você está aqui por um único motivo, encontrar o templo que pode trazer alguma esperança para o mundo.</h3><h3>Suas habilidades especiais de cartografo fazem que você conheça e entenda qualquer terreno como ninguém e se mova com agilidade e precisão.</h3><h3>Enquanto o caos se instala no convés você corre e desvia do mastro caindo, dos tentáculos do monstro e salta sobre as rachaduras para alcançar a cabine.</h3><h3>Dentro da cabine você sente um calafrio, o mapa desapareceu, alguém foi mais rápido que você!</h3><h3>Sem tempo para pensar você apensa se lamenta de ter tido que depender do serviço de piratas, e já que está aqui decide retribuir o favor e guardar para você os equipamentos que estão aqui.</h3><h3>São ferramentas de ladrões, coisas para abrir fechaduras, revelar e desativar armadilhas, talvez sejam uteis no futuro.</h3>",
 			choices: [
 				{
 					choice: "A batalha continua?",
@@ -291,7 +291,7 @@ function getStory() {
 			]
 		},	
 		
-		montarAcampamento: {
+		montarAcampamento2: {
 			title: "Montar Acampamento",
 			image: "img/suv02.webp",
 			story: "<h3>Aliviado e agradecido você decide montar acampamento, se alimentar e recuperar suas forças.</h3><h3>Despois de se alimentar é hora de investigar a ilha, não existe quase nada de útil aqui é um lugar rochoso e sem vida, mas eventualmente você descobre e uma caverna e decide entrar para explorar.</h3>",
@@ -495,7 +495,7 @@ function getStory() {
 
 		creditos: {
 			title: "Créditos",
-			story: "<h2 align='center'>Créditos</h2><h3>Esta aventura foi criada para o ambiente de RPG Lucidia publicado eplo Ópera RPG.</h3><h3>Ambiente criado em conjunto pelos alunos do Estúdio Lucidi com o professor Felipe Contartesi.</h3><h3>Ilustrações: Felipe Contartesi.</h3><h3>WebDev: José Carlos Lima.</h3>",
+			story: "<h2 align='center'>Créditos</h2><h3>Esta aventura foi criada para o ambiente de RPG Lucidia publicado pelo Ópera RPG.</h3><h3>Ambiente criado em conjunto pelos alunos do <a href='https://www.instagram.com/estudiolucidi' class='classe1' target='blank'>Estúdio Ludici</a> com o professor <a href='https://www.instagram.com/contartesi_art/' class='classe1' target='blank'>Felipe Contartesi</a>.</h3><h3>Ilustrações: Felipe Contartesi.</h3><h3>WebDev: <a href='https://josecarloslima.github.io/Projeto-Portfolio/' class='classe1' target='blank'>José Carlos Lima</a>.</h3>",
 			choices: [
 				{
 					choice: "Começar a Aventura!",
