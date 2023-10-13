@@ -5,9 +5,6 @@ var instrucoes = false;
 var creditos = false;
 var master = false;
 
-//variáveis de controle da história
-microchip = false;
-
 //função que define o conteúdo textual da narrativa
 function getStory() {
 	return {
@@ -112,7 +109,7 @@ function getStory() {
 		praticar: {
 			title: "Praticar",
 			image: "img/clinica.webp",
-			story: "<h3>Você é um Explorador uma classe artística que adquiri habilidades especiais através do desenho de mapas.</h3><h3>Você está sempre viajando e treinando em todo tipo de terreno inóspito e por isso sabe sobreviver e se orientar em qualquer local.</h3><h3>Através dos seus desenhos você entende o terreno como ninguém, se movendo duas vezes mais rápido que outras pessoas e tendo uma facilidade sobrenatural para nadar, correr escalar, e até se esconder. </h3>",
+			story: "<h3>Você é um Explorador uma classe artística que adquiri habilidades especiais através do desenho de mapas.</h3><h3>Você está sempre viajando e treinando em todo tipo de terreno inóspito e por isso sabe sobreviver e se orientar em qualquer local.</h3><h3>Através dos seus desenhos você entende o terreno como ninguém, se movendo duas vezes mais rápido que outras pessoas e tendo uma facilidade sobrenatural para nadar, correr escalar, e até se esconder.</h3>",
 			choices: [
 				{
 					choice: "Seguir Viagem",
@@ -183,7 +180,7 @@ function getStory() {
 		falhaRolar01: {
 			title: "Falha no ataque!",
 			image: "img/familia_atonita.webp",
-			story: "<h3>Você pega suas armas e...</h3><h3>Um chacoalhão do navio devido às investidas do Kraken atrapalham seu movimento.</h3><h3>--Meu pincel!-- Você grita mentalmente, enquanto realiza uma manobra arriscada para recuperar sua arma.</h3><h3>Você recupera a rma, mas perdeu o momento do ataque, o gigantesco tentáculo passa por você arrastando escombros de madeira, abrindo enormes rachaduras em seu navio.</h3>",
+			story: "<h3>Você pega suas armas e...</h3><h3>Um chacoalhão do navio devido às investidas do Kraken atrapalham seu movimento.</h3><h3>--Meu pincel!-- Você grita mentalmente, enquanto realiza uma manobra arriscada para recuperar sua arma.</h3><h3>Você recupera a arma, mas perdeu o momento do ataque, o gigantesco tentáculo passa por você arrastando escombros de madeira, abrindo enormes rachaduras em seu navio.</h3>",
 			choices: [
 				{
 					choice: "A batalha continua?",
@@ -198,8 +195,14 @@ function getStory() {
 			story: "<h3>À medida que o navio se desfazia sob o ataque impiedoso do Kraken, as madeiras rangiam e estalavam, e a tripulação lutava desesperadamente para sobreviver.</h3><h3>O monstro marinho arrastou a embarcação para as profundezas negras do oceano, sua última visão sendo a escuridão avassaladora das águas turbulentas.</h3><h3>Enquanto a destruição se desenrolava, você saltou do navio agonizante, lançando-se ao mar sabendo que suas chances de sobreviver eram incertas, mas sua determinação o impelia a continuar lutando.</h3><h3>Um bote salva-vidas, lançado momentos antes do ataque, flutuava próximo e nadando até ele você e se agarrou com força desesperada.</h3><h3>As águas turbulentas o arrastaram para longe do local da batalha, enquanto observava impotente enquanto o navio e a tripulação desapareciam nas profundezas.</h3><h3>Os dias passaram lentamente, à deriva no oceano vasto e implacável, após uma tempestade você acordou, o céu estava claro, e uma brisa fria acariciava seu rosto.</h3><h3>Confuso e desorientado você percebeu que havia chegado a uma ilha vulcânica, a terra era árida e rochosa, com fumaça e cinzas vulcânicas pairando no ar.</h3>",
 			choices: [
 				{
-					choice: "Começar Novamente",
-					destination: "intro"
+					choice: "Investigar o local",
+					destination: "investigarLocal"
+				}
+			],
+			choices: [
+				{
+					choice: "Montar Acampamento",
+					destination: "montarAcampamento"
 				}
 			]
 		},
@@ -234,8 +237,14 @@ function getStory() {
 			story: "<h3>À medida que o navio se desfazia sob o ataque impiedoso do Kraken, as madeiras rangiam e estalavam, e a tripulação abandonava o navio saltando ao mar com o máximo de recursos possíveis.</h3><h3>O monstro marinho arrastou a embarcação para as profundezas negras do oceano, sua última visão sendo a escuridão avassaladora das águas turbulentas.</h3><h3>Enquanto a destruição se desenrolava, você saltou do navio agonizante, lançando-se ao mar sabendo que suas chances de sobreviver estavam garantidas, ao menos por um tempo.</h3><h3>Um bote salva-vidas, lançado momentos antes do ataque, flutuava próximo e nadando até ele você e se agarrou com força desesperada.</h3><h3>As águas turbulentas o arrastaram para longe do local da batalha, enquanto buscava por sinais dos outros sobreviventes... sem encontrar nenhum...</h3><h3>Os dias passaram lentamente, à deriva no oceano vasto e implacável, após uma tempestade você acordou, o céu estava claro, e uma brisa fria acariciava seu rosto.</h3><h3>Confuso e desorientado você percebeu que havia chegado a uma ilha vulcânica, a terra era árida e rochosa, com fumaça e cinzas vulcânicas pairando no ar.</h3>",
 			choices: [
 				{
-					choice: "Começar Novamente",
-					destination: "intro"
+					choice: "Investigar o local",
+					destination: "investigarLocal"
+				}
+			],
+			choices: [
+				{
+					choice: "Montar Acampamento",
+					destination: "montarAcampamento"
 				}
 			]
 		},
@@ -247,27 +256,208 @@ function getStory() {
 			choices: [
 				{
 					choice: "A batalha continua?",
-					destination: 'batalhaContinua'
+					destination: 'batalhaContinua3'
 				}
 			]
 		},
 
-		nomeCapitulo: {
-			title: "Nome do Capitulo",
-			image: "img/suv02.webp",
-			story: "<h3>...</h3>",
+		batalhaContinua3: {
+			title: "A batalha continua?",
+			image: "img/vida_dura.webp",
+			story: "<h3>À medida que o navio se desfazia sob o ataque impiedoso do Kraken, as madeiras rangiam e estalavam, e a tripulação lutava desesperadamente para sobreviver.</h3><h3>O monstro marinho arrastou a embarcação para as profundezas negras do oceano, sua última visão sendo a escuridão avassaladora das águas turbulentas.</h3><h3>Enquanto a destruição se desenrolava, você saltou do navio agonizante, lançando-se ao mar sabendo que suas chances de sobreviver eram incertas, mas sua determinação o impelia a continuar lutando.</h3><h3>Um bote salva-vidas, lançado momentos antes do ataque, flutuava próximo e nadando até ele você e se agarrou com força desesperada.</h3><h3>As águas turbulentas o arrastaram para longe do local da batalha, enquanto observava impotente enquanto o navio e a tripulação desapareciam nas profundezas.</h3><h3>Os dias passaram lentamente, à deriva no oceano vasto e implacável, após uma tempestade você acordou, o céu estava claro, e uma brisa fria acariciava seu rosto.</h3><h3>Confuso e desorientado você percebeu que havia chegado a uma ilha vulcânica, a terra era árida e rochosa, com fumaça e cinzas vulcânicas pairando no ar.</h3>",
 			choices: [
 				{
-					choice: "A batalha continua?",
-					destination: 'batalhaContinua'
+					choice: "Investigar o local",
+					destination: "investigarLocal2"
+				}
+			],
+			choices: [
+				{
+					choice: "Montar Acampamento",
+					destination: "montarAcampamento2"
 				}
 			]
-		},		
+		},
 
-		irFinal: {
-			title: "Ir pro Final",
+		InvestigarLocal: {
+			title: "Investigar o Local",
 			image: "img/suv02.webp",
-			story: "<h3>Se divertiu com a história?</h3><h3>Sentiu o gostinho do que é um jogo de representação?</h3><h3 align = 'justify'>Ficou com gosto de 'quero mais' ?</h3 ><h3>Pois essa história sobre a hipnose televisiva coletiva da Catantevê pode continuar. Mas nessa continuação, o mestre-de-jogo será você!</h3><h3>Leia o <a href='https://operarpg.com.br' class='classe1' target='blank'>OPERA RPG</a>, e você encontrará várias dicas para você ser o mestre-de-jogo!</h3>",
+			story: "<h3>Com fome e cansado, mas aliviado de estar em terra firme você não tem outra opção senão investigar o local.</h3><h3>Não existe quase nada de útil aqui é um lugar rochoso e sem vida, mas eventualmente você descobre e uma caverna e decide entrar para explorar.</h3>",
+			choices: [
+				{
+					choice: "Explorar a caverna",
+					destination: 'explorarCaverna'
+				}
+			]
+		},	
+		
+		montarAcampamento: {
+			title: "Montar Acampamento",
+			image: "img/suv02.webp",
+			story: "<h3>Aliviado e agradecido você decide montar acampamento, se alimentar e recuperar suas forças.</h3><h3>Despois de se alimentar é hora de investigar a ilha, não existe quase nada de útil aqui é um lugar rochoso e sem vida, mas eventualmente você descobre e uma caverna e decide entrar para explorar.</h3>",
+			choices: [
+				{
+					choice: "Explorar a caverna",
+					destination: 'explorarCaverna2'
+				}
+			]
+		},
+
+		InvestigarLocal: {
+			title: "Investigar o Local",
+			image: "img/suv02.webp",
+			story: "<h3>Com fome e cansado, mas aliviado de estar em terra firme você não tem outra opção senão investigar o local.</h3><h3>Não existe quase nada de útil aqui é um lugar rochoso e sem vida, mas eventualmente você descobre e uma caverna e decide entrar para explorar.</h3>",
+			choices: [
+				{
+					choice: "Explorar a caverna",
+					destination: 'explorarCaverna2'
+				}
+			]
+		},	
+		
+		montarAcampamento: {
+			title: "Montar Acampamento",
+			image: "img/suv02.webp",
+			story: "<h3>Aliviado e agradecido você decide montar acampamento, se alimentar e recuperar suas forças.</h3><h3>Despois de se alimentar é hora de investigar a ilha, não existe quase nada de útil aqui é um lugar rochoso e sem vida, mas eventualmente você descobre e uma caverna e decide entrar para explorar.</h3>",
+			choices: [
+				{
+					choice: "Explorar a caverna",
+					destination: 'explorarCaverna'
+				}
+			]
+		},
+
+		explorarCaverna2: {
+			title: "Explorar a Caverna",
+			image: "img/suv02.webp",
+			story: "<h3>Depois de improvisar uma tocha, seus pés tocaram o solo da caverna, e rapidamente houve uma mudança na temperatura e na atmosfera. Um ar quente emanava das paredes, que devia vir do magma no interior do vulcão, além disso você não estava em uma caverna natural e comum, mas sim em um túnel esculpido por algum povo antigo.</h3><h3>As paredes da caverna estavam adornadas com pinturas antigas e desgastadas que contavam a história de Lucidia.</h3><h3>O mundo teria sido criado por duas divindades, a deusa da Criação e o deus da Representação.</h3><h3>Da vontade deles surgiu todo o universo de Lucidia, ainda disforme e caótico, por isso eles criaram e deram forma para o sonhar e para o plano material, o sonhar era uma dimensão de magia onde foram criadas as fadas superiores e os espíritos guardiões.</h3><h3>As fadas superiores ficaram encarregadas de dar forma para o mundo material e os espíritos guardiões deveriam representar e cuida de todos os aspectos do mundo material.</h3><h3>Quando o esboço do mundo estava feito a Criação e a Representação decretaram que o mundo seria uma tela em branco e que uma raça de seres materiais, os seres humanos, receberiam o presente e a dadiva de poder pinta-la.</h3><h3>Enquanto você interpretava as pinturas nos murais, o chão abaixo dos seus pés faz um clique estranho, e você percebe que caiu em uma armadilha.</h3><h3>Ela parece um pouco enferrujada e por isso não ativou ainda, mas assim que mover seu pé provavelmente ela ativará.</h3>",
+			choices: [
+				{
+					choice: "Use as ferramentas de ladrões",
+					destination: 'equipamentoPirata'
+				}
+			]
+		},
+
+		explorarCaverna: {
+			title: "Explorar a Caverna",
+			image: "img/suv02.webp",
+			story: "<h3>Depois de improvisar uma tocha, seus pés tocaram o solo da caverna, e rapidamente houve uma mudança na temperatura e na atmosfera. Um ar quente emanava das paredes, que devia vir do magma no interior do vulcão, além disso você não estava em uma caverna natural e comum, mas sim em um túnel esculpido por algum povo antigo.</h3><h3>As paredes da caverna estavam adornadas com pinturas antigas e desgastadas que contavam a história de Lucidia.</h3><h3>O mundo teria sido criado por duas divindades, a deusa da Criação e o deus da Representação.</h3><h3>Da vontade deles surgiu todo o universo de Lucidia, ainda disforme e caótico, por isso eles criaram e deram forma para o sonhar e para o plano material, o sonhar era uma dimensão de magia onde foram criadas as fadas superiores e os espíritos guardiões.</h3><h3>As fadas superiores ficaram encarregadas de dar forma para o mundo material e os espíritos guardiões deveriam representar e cuida de todos os aspectos do mundo material.</h3><h3>Quando o esboço do mundo estava feito a Criação e a Representação decretaram que o mundo seria uma tela em branco e que uma raça de seres materiais, os seres humanos, receberiam o presente e a dadiva de poder pinta-la.</h3><h3>Enquanto você interpretava as pinturas nos murais, o chão abaixo dos seus pés faz um clique estranho, e você percebe que caiu em uma armadilha.</h3><h3>Ela parece um pouco enferrujada e por isso não ativou ainda, mas assim que mover seu pé provavelmente ela ativará.</h3>",
+			choices: [
+				{
+					choice: "Respira fundo e... CORRE!",
+					destination: 'respiraCorre'
+				}
+			]
+		},
+
+		equipamentoPirata: {
+			title: "As Ferramentas dos Ladrões",
+			image: "img/suv02.webp",
+			story: "<h3>O equipamento dos piratas vai ser útil agora, com calma e suando frio você analisa e pouco a pouco consegue entender o mecanismo abaixo do seu pé e desativa-lo.</h3><h3>Um outro clique deixa seu coração mais tranquilo, é o barulho de uma alavanca que você conseguiu travar novamente, caso ela se abrisse a lava do vulcão escorreria do teto e você teria um banho quente demais para o seu gosto.</h3>",
+			choices: [
+				{
+					choice: "Continuar Explorando",
+					destination: 'continuarExplorando'
+				}
+			]
+		},
+
+		respiraCorre: {
+			title: "Respira fundo e... CORRE!",
+			image: "img/suv02.webp",
+			story: "<h3>Sem opções você respira fundo e se prepara para seja o que for que está por vir.</h3><h3>Quando você tira seu pé do lugar, lava vulcânica começa a escorrer do teto por todo o corredor, talvez por seu um mecanismo antigo ele não esteja funcionando totalmente e você vê alguns “pontos cegos” onde não escorre lava, você não tem muito tempo para pensar e decide que essa e sua única chance, correr e desviar até chegar ao fim do corredor.</h3>",
+			choices: [
+				{
+					choice: "Continuar Explorando",
+					destination: 'continuarExplorando'
+				}
+			]
+		},
+
+		continuarExlorando: {
+			title: "Continuar Explorando",
+			image: "img/suv02.webp",
+			story: "<h3>Você chega em uma sala circular com um altar majestoso.</h3><h3>Sobre este altar, um Golem guardião.</h3><h3>Esta imponente figura de pedra parecia ter sido esculpida diretamente de algum tipo de carvão vulcânico.</h3><h3>A estatura do Golem alcançava facilmente quatro metros de altura, e sua expressão esculpida em pedra transmitia uma serenidade eterna, como se ele fosse o protetor incansável deste templo sagrado.</h3><h3>E ele estava ali, segurando um ovo mágico com cuidado.</h3><h3>O ovo mágico em si era uma esfera brilhante e cintilante, com um espectro de cores que dançavam através de sua superfície como chamas dançantes.</h3><h3>Era um objeto de beleza e poder inquestionáveis, uma fonte de energia mágica que irradiava calor e vitalidade.</h3>",
+			choices: [
+				{
+					choice: "Usar o nanquim do Kraken",
+					destination: 'nanquimKraken'
+				}
+				{
+					choice: "Usar seu pincel e começar o combate!",
+					destination: 'rolarDados02'
+				}
+				{
+					choice: "Usar as parnas e bater em retirada",
+					destination: 'retirada'
+				}
+			]
+		},
+
+		rolarDados02: {
+			title: "",
+			story: "",
+			choices: [
+				{
+					choice: "",
+					destination: ""
+				}
+			]
+		},
+
+		sucessoRolar02: {
+			title: "Sucesso no ataque!",
+			image: "img/familia_vendo_tv.webp",
+			story: "<h3>A batalha, como você esperava, não foi fácil!</h3<h3>A cada pincelada o Golem respondia com socos, chiados e vapor quente!</h3<h3>E sua carcaça dura como rocha parecia impenetrável.</h3<h3>Mas se ele era durão, você era mais.</h3<h3>Você saltava de seus ataques, rolava com os golpes que recebia, e usava as paredes como plataforma para atacar-lhe pela frente e por trás.</h3<h3>Com os golpes você foi abrindo rachaduras no Golem até que ele era uma pilha de escombros e você... bem você já tinha visto dias melhores, mas estava viva e com o magnífico prêmio nas mãos: o ovo maravilhoso!</h3>",
+			choices: [
+				{
+					choice: "Conclusão",
+					destination: 'conclusao'
+				}
+			]
+		},
+
+		falhaRolar02: {
+			title: "Falha no ataque!",
+			image: "img/familia_atonita.webp",
+			story: "<h3>O Golem se mostra muito mais forte e poderoso do que até mesmo o Kraken! Seus golpes são ineficazes, e por mais que você salte, role, e corra pelas paredes, ele parece estar um passo a sua frente. Defesas fantásticas e esquivas magníficas. É inegável o quão superior tática e marcialmente aquele ser é. Com o tempo a luta vai ficando dramática para você. Golpe a golpe, investida a investida você vai se cansando, ele não. Ele ataca, ataca e ataca. Quando você para para retomar o fôlego, percebe seus hematomas, cortes e sangramentos. É isso. É parar agora e fugir enquanto é tempo, treinar, ficar mais forte e voltar um dia.</h3>",
+			choices: [
+				{
+					choice: "Usar as pernas e bater em retirada",
+					destination: 'retirada'
+				}
+			]
+		},
+
+		retirada: {
+			title: "Usar as pernas e bater em retirada",
+			image: "img/suv02.webp",
+			story: "<h3>Você decide que o risco não vale a pena, melhor viver para lutar outro dia.</h3<h3>Agora só lhe resta decidir se você vai esperar a sorte mandar algum socorro para te encontrar nessa ilha abandonada, ou encarar o mar aberto com o seu bote, é as opções não são nada boas, e você se pergunta como se meteu nessa situação.</h3>",
+			choices: [
+				{
+					choice: "Conclusão",
+					destination: 'conclusao2'
+				}
+			]
+		},
+
+		nanquimKraken: {
+			title: "Usar o Naquim do Kraken",
+			image: "img/suv02.webp",
+			story: "<h3>O Nanquim do Krakem tem a propriedade magica da escuridão.</h3><h3>Cobrindo seu corpo com essa tinta negra, você fica invisível aos outros de outros seres por alguns instantes, tempo suficiente para se aproximar do Golem e tomar ovo para si.</h3><h3>Quando você pega o ovo o Golem dispara socos em todas as direções, um deles quase atinge você, mas incapaz de ver você a criatura não tem chances de te acertar conforme você corre para fora da caverna.</h3>",
+			choices: [
+				{
+					choice: "Conclusão",
+					destination: 'conclusao'
+				}
+			]
+		},
+
+		conclusao: {
+			title: "Conclusão",
+			image: "img/suv02.webp",
+			story: "<h3>Com o ovo mágico, você deixou para trás a caverna no coração do vulcão.</h3><h3>Enquanto emergia da escuridão da gruta o calor fraco do sol banhava o ovo mágico e algo incrível aconteceu.</h3><h3>A esfera cintilante começou a brilhar intensamente, como se estivesse absorvendo a energia até que a superfície do ovo começou a rachar e se despedaçar, revelando uma criatura majestosa e mágica.</h3><h3>Diante de seus olhos incrédulos, uma fênix gloriosa emergiu das cinzas do ovo.</h3><h3>Suas penas eram de um vermelho-dourado resplandecente, e suas asas reluziam como chamas eternas.</h3><h3>Ela se ergueu no ar, enchendo a ilha com sua beleza e majestade enquanto voava em direção ao céu.</h3><h3>Você sentiu institivamente que esta era a manifestação do espírito guardião de Soleriam, o espírito do verão.</h3><h3>Algo incrível estava acontecendo.</h3><h3>A fênix, como o espírito do verão, representava a renovação e a vitalidade.</h3><h3>Com a fênix agora despertada, o verão estava retornando ao mundo.</h3><h3>A esperança florescia novamente, e a era glacial que havia assolado o mundo estava com os dias contados.</h3>",
 			choices: [
 				{
 					choice: "Começar Novamente",
@@ -276,6 +466,17 @@ function getStory() {
 			]
 		},
 
+		conclusao2: {
+			title: "Conclusão",
+			image: "img/suv02.webp",
+			story: "<h3>As coisas não deram nada certo para você, mas com muito esforço e boas doses de sorte, você volta a civilização!</h3><h3>Suas histórias divertem os outros marinheiros e quase ninguém acredita naquilo que você relata.</h3><h3>Mas uma pessoa, um livreiro e escritor, não só acredita como lhe paga um bom dinheiro para que sua história seja imortalizada num livro escrito por ele.</h3><h3>Assim você vende sua história e o sucesso de seu livro a fazem uma modelo de coragem e bravura, inspirando gerações a se lançarem ao mar em busca de ovos de ouro e Krakens!</h3><h3>Mas nem mesmo todo conforto que suas histórias garantiram você conseguiu tirar de seus pensamentos um simples questionamento... e se você tivesse feito diferente...?</h3>",
+			choices: [
+				{
+					choice: "Começar Novamente",
+					destination: 'intro'
+				}
+			]
+		},
 
 		instrucoes: {
 			title: "Instruções",
@@ -417,109 +618,10 @@ function renderScene() {
 				swal('Valores obtidos: ' + dado1 + ' + ' + dado2 + ' = ' + dados + ' <= 8 (Sucesso)');
 			}
 			else {
-				story.currentScene = 'dominarMente';
+				story.currentScene = 'falhaRolar02';
 				swal('Valores obtidos: ' + dado1 + ' + ' + dado2 + ' = ' + dados + ' > 8 (Falha)');
 			}
-			break;
-		case ('rolarDados03'):
-			if (dados <= 8) {
-				story.currentScene = 'continuarEstudando';
-				swal('Valores obtidos: ' + dado1 + ' + ' + dado2 + ' = ' + dados + ' <=8 (Sucesso)');
-			}
-			else {
-				story.currentScene = 'assistirTelevisao';
-				swal('Valores obtidos: ' + dado1 + ' + ' + dado2 + ' = ' + dados + ' > 8 (Falha)');
-			}
-			break;
-		case ('rolarDados04'):
-			if (dados <= 6) {
-				story.currentScene = 'sucessoRolar04';
-				swal('Valores obtidos: ' + dado1 + ' + ' + dado2 + ' = ' + dados + ' <= 6 (Sucesso)');
-			}
-			else {
-				story.currentScene = 'falhaRolar04';
-				swal('Valores obtidos: ' + dado1 + ' + ' + dado2 + ' = ' + dados + ' > 6 (Falha)');
-			}
-			break;
-		case ('rolarDados05'):
-			if (dados <= 6) {
-				story.currentScene = 'sucessoRolar05';
-				swal('Valores obtidos: ' + dado1 + ' + ' + dado2 + ' = ' + dados + ' <= 6 (Sucesso)');
-			}
-			else {
-				story.currentScene = 'falhaRolar04';
-				swal('Valores obtidos: ' + dado1 + ' + ' + dado2 + ' = ' + dados + ' > 6 (Falha)');
-			}
-			break;
-		case ('rolarDados06'):
-			if (dados <= 6) {
-				story.currentScene = 'sucessoRolar06';
-				swal('Valores obtidos: ' + dado1 + ' + ' + dado2 + ' = ' + dados + ' <= 6 (Sucesso)');
-			}
-			else {
-				if (dados == 12) {
-					story.currentScene = 'falhacriticaRolar06';
-					swal('Valores obtidos: ' + dado1 + ' + ' + dado2 + ' = ' + dados + ' = 12 (Falha Crítica)');
-				}
-				else {
-					story.currentScene = 'falhaRolar06';
-					swal('Valores obtidos: ' + dado1 + ' + ' + dado2 + ' = ' + dados + ' > 6 (Falha)');
-				}
-			}
-			break;
-		case ('rolarDados07'):
-			if (dados == 12) {
-				story.currentScene = 'sucessoRolar07';
-				swal('Valores obtidos: ' + dado1 + ' + ' + dado2 + ' = ' + dados + ' = 12 (Sucesso Crítico)');
-			}
-			else {
-				story.currentScene = 'falhaRolar07';
-				swal('Valores obtidos: ' + dado1 + ' + ' + dado2 + ' = ' + dados + ' < 12 (Falha)');
-			}
-			break;
-		case ('rolarDados08'):
-			if ((dados + 6) >= 12) {
-				story.currentScene = 'sucessoRolar08';
-				swal('Valores obtidos: ' + dado1 + ' + ' + dado2 + ' + 6 = ' + (dados + 6) + ' >= 12 (Sucesso)');
-			}
-			else {
-				story.currentScene = 'falhaRolar08';
-				swal('Valores obtidos: ' + dado1 + ' + ' + dado2 + ' + 6 = ' + (dados + 6) + ' < 12 (Falha)');
-			}
-			break;
-		case ('rolarDados09'):
-			if (dados <= 7) {
-				story.currentScene = 'sucessoRolar09';
-				swal('Valores obtidos: ' + dado1 + ' + ' + dado2 + ' = ' + dados + ' <= 7 (Sucesso)');
-			}
-			else {
-				story.currentScene = 'falhaRolar09';
-				swal('Valores obtidos: ' + dado1 + ' + ' + dado2 + ' = ' + dados + ' > 7 (Falha)');
-			}
-			break;
-		case ('rolarDados10'):
-			if (dados <= 8) {
-				story.currentScene = 'sucessoRolar10';
-				swal('Valores obtidos: ' + dado1 + ' + ' + dado2 + ' = ' + dados + ' <= 8 (Sucesso)');
-			}
-			else {
-				story.currentScene = 'falhaRolar10';
-				swal('Valores obtidos: ' + dado1 + ' + ' + dado2 + ' = ' + dados + ' > 8 (Falha)');
-			}
-			break;
-		case ('pegarMicrochip'):
-			microchip = true;
-			story.currentScene = 'correrFundos';
-			break;
-		case ('testeMicrochip'):
-			if (microchip)
-				story.currentScene = 'terMicrochip';
-			else
-				story.currentScene = 'naoterMicrochip';
-			break;
-		case ('intro'):
-			microchip = false;
-			break;
+			break;	
 	}
 
 	//Renderização do texto
