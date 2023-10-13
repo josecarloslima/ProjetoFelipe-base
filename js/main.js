@@ -506,7 +506,7 @@ function getStory() {
 
 		creditos: {
 			title: "Créditos",
-			story: "<h2 align='center'>Créditos</h2><h3>Esta é aventura-solo é parte do <a href='https://operarpg.com.br/product/opera-rpg-modulo-basico/' target='blank' class='classe1'>OPERA RPG 1ª Edição</a></center></p><p><b>ISBN:</b> 85-89161-05-6</p><p><b>Programação:</b> Leonardo Antônio de Andrade</p><p><b>Autores:</b></p><p>&nbsp;&nbsp;Leonardo Antônio de Andrade</p><p>&nbsp;&nbsp;Rogério de Mello Godoy</p><p><b>Ilustrações: </b>Marcelo Braga</p><p><b>Trilha Sonora: </b></p>&nbsp;&nbsp;<a href='jamendo.com/track/1839683/conspiracy-theorist' target='blank' class='classe1'>Trecho da Faixa Conspiracy Theorist, de Nick Gordy</a></h3>",
+			story: "<h2 align='center'>Créditos</h2><h3>Esta aventura foi criada para o ambiente de RPG Lucidia publicado eplo Ópera RPG.</h3><h3>Ambiente criado em conjunto pelos alunos do Estúdio Lucidi com o professor Felipe Contartesi.</h3><h3>Ilustrações: Felipe Contartesi.</h3><h3>WebDev: José Carlos Lima.</h3><h3>Clique nos links para conhecer: </h3><h3><link href="https://operarpg.com.br/">O Ópera RPG;</link></h3><h3><link href="https://www.instagram.com/estudiolucidi/">O Estúdio Ludici;</link></h3><h3><link href="https://www.instagram.com/contartesi_art/">O Autor;</link></h3><h3><link href="https://josecarloslima.github.io/Projeto-Portfolio/">O WebDev.</link></h3>",
 			choices: [
 				{
 					choice: "Começar a Aventura!",
