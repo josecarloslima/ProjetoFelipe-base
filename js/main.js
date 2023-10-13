@@ -375,7 +375,7 @@ function getStory() {
 			]
 		},
 
-		continuarExlorando: {
+		continuarExplorando: {
 			title: "Continuar Explorando",
 			image: "img/suv02.webp",
 			story: "<h3>Você chega em uma sala circular com um altar majestoso.</h3><h3>Sobre este altar, um Golem guardião.</h3><h3>Esta imponente figura de pedra parecia ter sido esculpida diretamente de algum tipo de carvão vulcânico.</h3><h3>A estatura do Golem alcançava facilmente quatro metros de altura, e sua expressão esculpida em pedra transmitia uma serenidade eterna, como se ele fosse o protetor incansável deste templo sagrado.</h3><h3>E ele estava ali, segurando um ovo mágico com cuidado.</h3><h3>O ovo mágico em si era uma esfera brilhante e cintilante, com um espectro de cores que dançavam através de sua superfície como chamas dançantes.</h3><h3>Era um objeto de beleza e poder inquestionáveis, uma fonte de energia mágica que irradiava calor e vitalidade.</h3>",
@@ -389,7 +389,7 @@ function getStory() {
 					destination: 'rolarDados02'
 				},
 				{
-					choice: "Usar as parnas e bater em retirada",
+					choice: "Usar as pernas e bater em retirada",
 					destination: 'retirada'
 				}
 			]
@@ -409,7 +409,7 @@ function getStory() {
 		sucessoRolar02: {
 			title: "Sucesso no ataque!",
 			image: "img/familia_vendo_tv.webp",
-			story: "<h3>A batalha, como você esperava, não foi fácil!</h3<h3>A cada pincelada o Golem respondia com socos, chiados e vapor quente!</h3<h3>E sua carcaça dura como rocha parecia impenetrável.</h3<h3>Mas se ele era durão, você era mais.</h3<h3>Você saltava de seus ataques, rolava com os golpes que recebia, e usava as paredes como plataforma para atacar-lhe pela frente e por trás.</h3<h3>Com os golpes você foi abrindo rachaduras no Golem até que ele era uma pilha de escombros e você... bem você já tinha visto dias melhores, mas estava viva e com o magnífico prêmio nas mãos: o ovo maravilhoso!</h3>",
+			story: "<h3>A batalha, como você esperava, não foi fácil!</h3<h3>A cada pincelada o Golem respondia com socos, chiados e vapor quente!</h3<h3>E sua carcaça dura como rocha parecia impenetrável.</h3<h3>Mas se ele era durão, você era mais.</h3<h3>Você saltava de seus ataques, rolava com os golpes que recebia, e usava as paredes como plataforma para atacar-lhe pela frente e por trás.</h3<h3>Com os golpes você foi abrindo rachaduras no Golem até que ele era uma pilha de escombros e você... bem você já tinha visto dias melhores, mas estava viva e com o magnífico prêmio nas mãos: o ovo!</h3>",
 			choices: [
 				{
 					choice: "Conclusão",
