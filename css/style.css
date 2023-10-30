@@ -5,8 +5,8 @@ body
   border: 10;
   background-color: #eac291;
   color: white;
-  font-size: 16px;
-  font-family: 'Comfortaa', sans-serif;
+  font-size: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1
@@ -23,9 +23,10 @@ h2 {
 }
 
 h3 {
-	font-size: 1.5rem;
-	font-family: Constantia;
-	text-align: justify;
+	font-size: 1.2rem;
+	font-family: sans-serif;
+	text-align: left;
+	font-weight: lighter;
 }
 
 #content
@@ -35,8 +36,8 @@ h3 {
   width: 770px;
   margin: 15px;
   padding: 15px;
-  font-size: 15px;
-  text-align: justify;
+  font-size: 1rem;
+  text-align: left;
   margin-left: auto;
   margin-right: auto;
 }
