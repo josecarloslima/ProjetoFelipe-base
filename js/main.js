@@ -148,7 +148,7 @@ function getStory() {
 					destination: 'salvaMantimentos'
 				},
 				{
-					choice: "Recuperar o mapa que está na cabine de capitão",
+					choice: "Recuperar o mapa",
 					destination: 'recuperaMapa'
 				}
 			]
@@ -244,7 +244,7 @@ function getStory() {
 		},
 
 		recuperaMapa: {
-			title: "Recuperar o mapa que está na cabine de capitão",
+			title: "Recuperar o mapa",
 			image: " ",
 			story: "<h3>Você está aqui por um único motivo: encontrar o templo que pode trazer alguma esperança para o mundo.</h3><h3>E o meio para isso é o mapa; assim, você não vai deixá-lo aqui para ser destruído pelo monstro!</h3><h3>Enquanto o caos se instala no convés, você corre e desvia do mastro caindo, dos tentáculos do monstro, e salta sobre as rachaduras para alcançar a cabine.</h3><h3>Dentro da cabine, você rapidamente pega o mapa, um estojo resistente à água e observa se não há mais nada que possa ajudar.</h3><h3>Você avista um pequeno estojo com ferramentas de múltiplos usos!</h3><h3>São ferramentas usadas por ladrões, para abrir fechaduras, revelar e desativar armadilhas, esse tipo de coisa.</h3><h3>Você pega tudo isso, mas ao sair nota que não há mais esperança para nada nem ninguém, a embarcação está afundando!</h3>",
 			choices: [
@@ -262,7 +262,7 @@ function getStory() {
 			choices: [
 				{
 					choice: "Investigar o local",
-					destination: "investigarLocal2"
+					destination: 'investigarLocal2'
 				}
 			]
 		},
@@ -291,7 +291,7 @@ function getStory() {
 			]
 		},
 
-		InvestigarLocal2: {
+		investigarLocal2: {
 			title: "Investigar o Local",
 			image: "img/caverna800x533.png",
 			story: "<h3>A ilha não tem muito a oferecer, sendo uma ilha vulcânica e bastante pequena.</h3><h3>Mas nela, segundo seu mapa e sua investigação, há a entrada para o templo na forma de uma caverna natural.</h3><h3>Não demora muito até você encontrar, e sabendo o que é, procura minuciosamente e descobre ranhuras que seriam impossíveis de se perceber se você não soubesse onde está.</h3><h3>É um guia sobre a caverna e algum tipo de dispositivo dentro dela, e como desativá-lo!</h3>",
